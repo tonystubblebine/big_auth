@@ -4,6 +4,7 @@ BigAuth.setup do |config|
   # config.twitter 'APP_KEY', 'APP_SECRET'
   
   # ==> Facebook
+  # Register your Facebook app here: http://developers.facebook.com/
   # config.facebook 'APP_KEY', 'APP_SECRET', :scope => 'publish_stream'
   
   if Rails.env.production?
