@@ -22,7 +22,7 @@ module BigAuth
       end
 
       if BigAuth.service_configs[:facebook]
-        config.app_middleware.use ::BigAuth::Strategies::Facebook, 
+        config.app_middleware.use ::OmniAuth::Strategies::Facebook, 
           BigAuth.service_configs[:facebook].app_key,
           BigAuth.service_configs[:facebook].app_secret,
           BigAuth.service_configs[:facebook].options
