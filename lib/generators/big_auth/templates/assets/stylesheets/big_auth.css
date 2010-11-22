@@ -1,68 +1,17 @@
-#big_auth-login {
-  overflow: hidden;
-}
-
-#big_auth-login .information {
+a.bigauth-button {
+  width: 150px;
   float: left;
-  margin-right: 40px;
-  width: 450px;
+  margin: 20px;
+}
+a.bigauth-button.twitter {
+  background: url(/images/big_auth/signin_twitter.png) center center no-repeat;
+}
+a.bigauth-button span {
+  margin-left: -9999px;
+  font-size: 0px;
 }
 
-a.big_auth-button {
-  text-decoration: none;
-}
-a.big_auth-button span {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-width: 1px;
-  border-style: solid;
-  font-weight: bold;
-  font-family: "proxima-nova-condensed-1", "proxima-nova-condensed-2", Helvetica, Arial, Verdana, sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
-  margin-top: 1px;
-  padding: 8px 10px 9px;
-  position: relative;
-  text-decoration: none;
-  text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0px;
-  background: #3583cf;
-  background: -webkit-gradient(linear, left top, left bottom, from(#629ed9), to(#3583cf));
-  border-color: #bbe2f8;
-  color: white;
-  float: none;
-  font-size: 18px;
-  position: absolute;
-}
-a:hover.big_auth-button span {
-  text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0px;
-  background: #6ca520;
-  background: -webkit-gradient(linear, left top, left bottom, from(#90bb58), to(#6ca520));
-  border-color: #dcf1bf;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px 0;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 0 5px 0;
+a.bigauth-button.facebook {
+  background: url(/images/big_auth/signin_facebook.png) center center no-repeat;
 }
 
-a.big_auth-button.twitter {
-  background: url(/images/big_auth/twitter.gif) center center no-repeat;
-  float: left;
-  height: 255px;
-  width: 200px;
-}
-a.big_auth-button.twitter span {
-  margin: 240px 0 0 25px;
-}
-
-a.big_auth-button.facebook {
-  background: url(/images/big_auth/facebook.png) center center no-repeat;
-  float: left;
-  margin-left: 40px;
-  height: 255px;
-  width: 200px;
-}
-a.big_auth-button.facebook span {
-  margin: 240px 0 0 11px;
-}
