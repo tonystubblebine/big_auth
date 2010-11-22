@@ -1,4 +1,4 @@
-module Omnisocial
+module BigAuth
   class AuthController < ApplicationController
   
     unloadable
@@ -13,9 +13,9 @@ module Omnisocial
     def callback    
       account = case request.env['rack.auth']['provider']
         when 'twitter' then
-          Omnisocial::TwitterAccount.find_or_create_from_auth_hash(request.env['rack.auth'])
+          BigAuth::TwitterAccount.find_or_create_from_auth_hash(request.env['rack.auth'])
         when 'facebook' then
-          Omnisocial::FacebookAccount.find_or_create_from_auth_hash(request.env['rack.auth'])
+          BigAuth::FacebookAccount.find_or_create_from_auth_hash(request.env['rack.auth'])
       end
     
       self.current_user = account.find_or_create_user

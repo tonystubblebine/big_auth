@@ -1,12 +1,12 @@
 require 'rails/generators'
 require 'rails/generators/migration'
 
-module Omnisocial
+module BigAuth
   module Generators
-    class OmnisocialGenerator < Rails::Generators::Base
+    class BigAuthGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
       
-      desc 'Creates an omnisocial initializer and migration, and copies image and CSS assets.'
+      desc 'Creates an big_auth initializer and migration, and copies image and CSS assets.'
 
       def self.source_root
         File.join(File.dirname(__FILE__), 'templates')
@@ -23,11 +23,11 @@ module Omnisocial
       end
 
       def create_migration_file
-        migration_template 'migration.rb', 'db/migrate/create_omnisocial_tables.rb'
+        migration_template 'migration.rb', 'db/migrate/create_big_auth_tables.rb'
       end
       
       def copy_initializer
-        template 'omnisocial.rb', 'config/initializers/omnisocial.rb'
+        template 'big_auth.rb', 'config/initializers/big_auth.rb'
       end
       
       def copy_user_model
@@ -35,11 +35,11 @@ module Omnisocial
       end
       
       def copy_assets
-        copy_file 'assets/stylesheets/omnisocial.css',  'public/stylesheets/omnisocial.css'
-        copy_file 'assets/images/twitter.gif',          'public/images/omnisocial/twitter.gif'
-        copy_file 'assets/images/facebook.png',         'public/images/omnisocial/facebook.png'
-        copy_file 'assets/images/signin_twitter.png',   'public/images/omnisocial/signin_twitter.png'
-        copy_file 'assets/images/signin_facebook.png',  'public/images/omnisocial/signin_facebook.png'
+        copy_file 'assets/stylesheets/big_auth.css',  'public/stylesheets/big_auth.css'
+        copy_file 'assets/images/twitter.gif',          'public/images/big_auth/twitter.gif'
+        copy_file 'assets/images/facebook.png',         'public/images/big_auth/facebook.png'
+        copy_file 'assets/images/signin_twitter.png',   'public/images/big_auth/signin_twitter.png'
+        copy_file 'assets/images/signin_facebook.png',  'public/images/big_auth/signin_facebook.png'
       end
       
       def show_readme

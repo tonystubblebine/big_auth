@@ -1,3 +1,3 @@
-class User < Omnisocial::User
+class User < BigAuth::User
   # Make any customisations here
 end

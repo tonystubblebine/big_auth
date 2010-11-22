@@ -1,6 +1,6 @@
-module Omnisocial
+module BigAuth
   class User < ActiveRecord::Base
-    has_one :login_account, :class_name => 'Omnisocial::LoginAccount', :dependent => :destroy
+    has_one :login_account, :class_name => 'BigAuth::LoginAccount', :dependent => :destroy
     delegate :login, :name, :picture_url, :account_url, :to => :login_account
   
     def to_param

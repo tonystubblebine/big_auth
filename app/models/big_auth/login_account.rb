@@ -1,4 +1,4 @@
-module Omnisocial
+module BigAuth
   class LoginAccount < ActiveRecord::Base
     belongs_to :user
   

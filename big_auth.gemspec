@@ -1,16 +1,16 @@
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift(lib) unless $:.include?(lib)
 
-require 'omnisocial/version'
+require 'big_auth/version'
 require 'bundler'
 
 Gem::Specification.new do |gem|  
-  gem.name          = 'omnisocial'
-  gem.version       = Omnisocial::VERSION
+  gem.name          = 'big_auth'
+  gem.version       = BigAuth::VERSION
   gem.platform      = Gem::Platform::RUBY
-  gem.authors       = ['Tim Riley']
-  gem.email         = 'tim@openmonkey.com'
-  gem.homepage      = 'http://github.com/icelab/omnisocial'
+  gem.authors       = ['Tony Stubblebine']
+  gem.email         = 'tony@tonystubblebine.com'
+  gem.homepage      = 'http://github.com/tonystubblebine/big_auth'
   gem.summary       = 'Twitter and Facebook logins for your Rails application.'
   gem.description   = 'Twitter and Facebook logins for your Rails application.'
   gem.has_rdoc      = false

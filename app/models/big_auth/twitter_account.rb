@@ -1,4 +1,4 @@
-module Omnisocial
+module BigAuth
   class TwitterAccount < LoginAccount
     def assign_account_info(auth_hash)
       self.remote_account_id  = auth_hash['uid']

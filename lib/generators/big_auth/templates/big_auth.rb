@@ -1,4 +1,4 @@
-Omnisocial.setup do |config|
+BigAuth.setup do |config|
   
   # ==> Twitter
   # config.twitter 'APP_KEY', 'APP_SECRET'
