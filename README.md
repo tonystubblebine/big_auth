@@ -1,3 +1,5 @@
+Nothing to see here. I cloned this as part of my goal to have a set of bloated reusable engines for all of my projects. But for now, this is just a slightly modified, unsupported, version of OmniSocial. Check that out instead: (http://github.com/icelab/omnisocial)
+
 # OmniSocial
 
 A Rails 3 engine for Twitter and Facebook logins using [OmniAuth](http://github.com/intridea/omniauth)
