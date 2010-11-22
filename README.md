@@ -20,6 +20,8 @@ To use OmniSocial in a Rails 3 application:
 
 6. Test that the logins work by accessing `/login` inside your application.
 
+7. Add "big_auth/auth/links" partial to your layouts in order to have login/logout links on all of your pages.
+
 Some more detailed installation instructions are in the [project announcement article](http://icelab.com.au/articles/welcome-to-the-omnisocial/).
 
 ## Copyright & License
