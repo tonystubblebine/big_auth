@@ -2,6 +2,7 @@ require 'big_auth'
 
 require 'rails'
 require 'action_controller'
+require 'big_auth/action_controller_ext'
 
 require 'omniauth/core'
 require 'omniauth/oauth'

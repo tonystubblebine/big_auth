@@ -1,4 +1,4 @@
-class ActionController::Base
+ActionController::Base.class_eval do
   def self.require_user(options = {})
     raise Exception, "require_user cannot be called on ActionController::Base. Only it's subclasses" if self ==  ActionController::Base
     prepend_before_filter :require_user, options

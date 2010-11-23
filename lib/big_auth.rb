@@ -21,4 +21,3 @@ module BigAuth
   require 'big_auth/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
 end
 
-require 'extensions/action_controller/base'
