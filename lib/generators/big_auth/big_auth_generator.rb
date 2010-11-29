@@ -1,11 +1,11 @@
 require 'rails/generators'
 require 'rails/generators/migration'
-
+require 'big_library/generators'
 module BigAuth
   module Generators
     class BigAuthGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
-      
+      include BigLibrary::Generators
       desc 'Creates an big_auth initializer and migration, and copies image and CSS assets.'
 
       def self.source_root
@@ -23,7 +23,7 @@ module BigAuth
       end
 
       def create_migration_file
-        migration_template 'migration.rb', 'db/migrate/create_big_auth_tables.rb'
+        try_migration_template 'migration.rb', 'db/migrate/create_big_auth_tables.rb'
       end
       
       def copy_initializer
@@ -33,11 +33,13 @@ module BigAuth
       def copy_user_model
         template 'user.rb', 'app/models/user.rb'
       end
-      
+
+      def copy_fixtures
+        copy_file 'user_fixture.yml', 'test/fixtures/users.yml'
+      end
+
       def copy_assets
         copy_file 'assets/stylesheets/big_auth.css',  'public/stylesheets/big_auth.css'
-        copy_file 'assets/images/twitter.gif',          'public/images/big_auth/twitter.gif'
-        copy_file 'assets/images/facebook.png',         'public/images/big_auth/facebook.png'
         copy_file 'assets/images/signin_twitter.png',   'public/images/big_auth/signin_twitter.png'
         copy_file 'assets/images/signin_facebook.png',  'public/images/big_auth/signin_facebook.png'
       end
