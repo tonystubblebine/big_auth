@@ -7,7 +7,7 @@ gem 'oa-oauth',     :require => 'omniauth/oauth'
 gem 'bcrypt-ruby',  :require => 'bcrypt'
 
 group :production do
-  gem "big_library", :require => "big_library", :git => "git@github.com:tonystubblebine/big_library.git"
+  gem "big_library", :require => "big_library", :git => "git://github.com/tonystubblebine/big_library.git"
 end
 
 #group :development, :test do

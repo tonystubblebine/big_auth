@@ -1,6 +1,6 @@
 GIT
-  remote: git@github.com:tonystubblebine/big_library.git
-  revision: 7f3384e5232d9b03d6f9f902c1738feec5567951
+  remote: git://github.com/tonystubblebine/big_library.git
+  revision: 29d2ebf96625f988e00eaaf74c2fcd90270d4f4f
   specs:
     big_library (0.0.1)
 
