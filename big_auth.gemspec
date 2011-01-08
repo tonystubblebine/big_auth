@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
-  s.date = %q{2011-01-01}
+  s.date = %q{2011-01-07}
   s.email = %q{tony+bigauth@tonystubblebine.com}
   s.extra_rdoc_files = [
     "README.md"
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "lib/big_auth.rb",
     "lib/big_auth/action_controller_ext.rb",
     "lib/big_auth/engine.rb",
+    "lib/big_auth/railties/tasks.rake",
     "lib/big_auth/service_config.rb",
     "lib/big_auth/test_helper.rb",
     "lib/big_auth/version.rb",
@@ -55,17 +56,20 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<oa-core>, [">= 0"])
       s.add_runtime_dependency(%q<oa-oauth>, [">= 0"])
       s.add_runtime_dependency(%q<bcrypt-ruby>, [">= 0"])
+      s.add_runtime_dependency(%q<big_library>, [">= 0"])
     else
       s.add_dependency(%q<rails>, ["> 3.0.0"])
       s.add_dependency(%q<oa-core>, [">= 0"])
       s.add_dependency(%q<oa-oauth>, [">= 0"])
       s.add_dependency(%q<bcrypt-ruby>, [">= 0"])
+      s.add_dependency(%q<big_library>, [">= 0"])
     end
   else
     s.add_dependency(%q<rails>, ["> 3.0.0"])
     s.add_dependency(%q<oa-core>, [">= 0"])
     s.add_dependency(%q<oa-oauth>, [">= 0"])
     s.add_dependency(%q<bcrypt-ruby>, [">= 0"])
+    s.add_dependency(%q<big_library>, [">= 0"])
   end
 end
 

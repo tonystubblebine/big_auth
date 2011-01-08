@@ -13,6 +13,14 @@ ActionController::Base.class_eval do
   def require_user
     current_user.present? || deny_access
   end
+
+  def require_no_user
+    !current_user.present? || deny_access
+  end
+
+  def require_super_user
+    (current_user.present? and current_user == User.first) || deny_access
+  end
   
   # Utils
   
