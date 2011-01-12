@@ -5,7 +5,21 @@ ActionController::Base.class_eval do
   end
   
   helper_method :current_user, :current_user?
-
+  
+  def current_user
+    @current_user ||= if session[:user_id]
+      User.find(session[:user_id])
+    elsif cookies[:remember_token]
+      User.find_by_remember_token(cookies[:remember_token])
+    else
+      false
+    end
+  end
+  
+  def current_user?
+    !!current_user
+  end
+ 
   protected
   
   # Filters
@@ -37,21 +51,7 @@ ActionController::Base.class_eval do
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end
-  
-  def current_user
-    @current_user ||= if session[:user_id]
-      User.find(session[:user_id])
-    elsif cookies[:remember_token]
-      User.find_by_remember_token(cookies[:remember_token])
-    else
-      false
-    end
-  end
-  
-  def current_user?
-    !!current_user
-  end
-  
+ 
   def current_user=(user)
     user.tap do |user|
       user.remember
