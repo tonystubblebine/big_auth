@@ -1,0 +1,13 @@
+= big_auth
+
+<em>Pre-alpha non-functional version.</em>
+
+Rails 3 engine for handling authentication and authorization. This is just a clone of omnisocial for now, check that out instead: http://github.com/icelab/omnisocial
+
+== Installation
+1. blah blah blah
+
+== Features for 0.1
+
+1. Auth: facebook, twitter, username/password
+2. Password reset
