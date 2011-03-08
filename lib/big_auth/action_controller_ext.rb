@@ -7,10 +7,14 @@ ActionController::Base.class_eval do
   helper_method :current_user, :current_user?
   
   def current_user
-    @current_user ||= if session[:user_id]
-      User.find(session[:user_id])
-    elsif cookies[:remember_token]
-      User.find_by_remember_token(cookies[:remember_token])
+    @current_user ||= if session[:account_id] and defined?(current_site)
+      account = BigAuth::Account.find(session[:account_id]) && current_site && account.users.find_by_site_id(current_site.id)
+    elsif session[:account_id]
+      account = BigAuth::Account.find(session[:account_id]) && account.users.first
+    elsif cookies[:remember_token] and defined?(current_site)
+      account = BigAuth::Account.find_by_remember_token(cookies[:remember_token]) && current_site && account.users.find_by_site_id(current_site.id)
+    elsif cookies[:remember_token] and defined?(current_site)
+      account = BigAuth::Account.find_by_remember_token(cookies[:remember_token]) && account.users.first
     else
       false
     end
@@ -54,14 +58,14 @@ ActionController::Base.class_eval do
  
   def current_user=(user)
     user.tap do |user|
-      user.remember
-      session[:user_id]         = user.id
-      cookies[:remember_token]  = user.remember_token
+      user.account.remember
+      session[:account_id]         = user.account.id
+      cookies[:remember_token]  = user.account.remember_token
     end
   end
   
   def logout!
-    session[:user_id] = nil
+    session[:account_id] = nil
     @current_user     = nil
     cookies.delete(:remember_token)
     session[:return_to] = nil

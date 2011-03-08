@@ -1,6 +1,6 @@
 module BigAuth
   class LoginAccount < ActiveRecord::Base
-    belongs_to :user
+    belongs_to :account
   
     def self.find_or_create_from_auth_hash(auth_hash)
       if (account = find_by_remote_account_id(auth_hash['uid']))
@@ -18,12 +18,13 @@ module BigAuth
       end
     end
   
-    def find_or_create_user
-      return self.user if self.user
+    def find_or_create_account
+      return self.account if self.account
     
-      ::User.create do |user|
-        user.login_account = self
+      BigAuth::Account.create do |account|
+        account.login_accounts << self
       end
+      account
     end
   end
 end

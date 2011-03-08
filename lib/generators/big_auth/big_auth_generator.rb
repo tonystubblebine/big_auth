@@ -12,7 +12,6 @@ module BigAuth
         File.join(File.dirname(__FILE__), 'templates')
       end
 
-      # Implement the required interface for Rails::Generators::Migration:
       # http://github.com/rails/rails/blob/master/activerecord/lib/generators/active_record.rb
       def self.next_migration_number(dirname)
         if ActiveRecord::Base.timestamped_migrations
@@ -22,10 +21,12 @@ module BigAuth
         end
       end
 
-      def create_migration_file
-        try_migration_template 'migration.rb', 'db/migrate/create_big_auth_tables.rb'
+      def create_migration_files
+        %w{create_big_auth_tables}.each do |migration|
+          create_migration_file(migration)
+        end
       end
-      
+
       def copy_initializer
         template 'big_auth.rb', 'config/initializers/big_auth.rb'
       end
@@ -36,6 +37,7 @@ module BigAuth
 
       def copy_fixtures
         copy_file 'user_fixture.yml', 'test/fixtures/users.yml'
+        copy_file 'account_fixture.yml', 'test/fixtures/accounts.yml'
       end
 
       def copy_assets
