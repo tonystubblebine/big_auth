@@ -8,13 +8,13 @@ ActionController::Base.class_eval do
   
   def current_user
     @current_user ||= if session[:account_id] and defined?(current_site)
-      account = BigAuth::Account.find(session[:account_id]) && current_site && account.users.find_by_site_id(current_site.id)
+      (account = BigAuth::Account.find(session[:account_id])) && current_site && account.users.find_by_site_id(current_site.id)
     elsif session[:account_id]
-      account = BigAuth::Account.find(session[:account_id]) && account.users.first
+      (account = BigAuth::Account.find(session[:account_id])) && account.users.first
     elsif cookies[:remember_token] and defined?(current_site)
-      account = BigAuth::Account.find_by_remember_token(cookies[:remember_token]) && current_site && account.users.find_by_site_id(current_site.id)
+      (account = BigAuth::Account.find_by_remember_token(cookies[:remember_token])) && current_site && account.users.find_by_site_id(current_site.id)
     elsif cookies[:remember_token] and defined?(current_site)
-      account = BigAuth::Account.find_by_remember_token(cookies[:remember_token]) && account.users.first
+      (account = BigAuth::Account.find_by_remember_token(cookies[:remember_token])) && account.users.first
     else
       false
     end

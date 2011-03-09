@@ -1,4 +1,9 @@
 Rails::Application.routes.draw do
+  namespace "big_auth" do
+    resources :roles
+    resources :roles_users
+  end
+
   match '/login'                  => 'big_auth/auth#new',      :as => :login
   match '/auth/:service/callback' => 'big_auth/auth#callback'
   match '/auth/failure'           => 'big_auth/auth#failure'

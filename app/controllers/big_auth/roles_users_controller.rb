@@ -1,13 +1,15 @@
+# TODO: 2011-03-08 <tony+bigauth@tonystubblebine.com> -- Maybe these should all be nested under along the lines of users/1/roles_users
 module BigAuth
 class RolesUsersController < ApplicationController
   # GET /roles_users
   # GET /roles_users.xml
   def index
-    @roles_users = defined?(current_site) ? current_site.roles_users : RolesUser.all
+    @users = defined?(current_site) ? current_site.users.all : User.all
+    @roles = BigAuth::Role.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @roles_users }
+      #format.xml  { render :xml => @roles_users }
     end
   end
 
@@ -41,11 +43,11 @@ class RolesUsersController < ApplicationController
   # POST /roles_users
   # POST /roles_users.xml
   def create
-    @roles_user = RolesUser.new(params[:roles_user])
+    @roles_user = RolesUser.new(params[:big_auth_roles_user])
 
     respond_to do |format|
       if @roles_user.save
-        format.html { redirect_to(@roles_user, :notice => 'Roles user was successfully created.') }
+        format.html { redirect_to(big_auth_roles_users_url(), :notice => 'Roles user was successfully created.') }
         format.xml  { render :xml => @roles_user, :status => :created, :location => @roles_user }
       else
         format.html { render :action => "new" }
@@ -60,8 +62,8 @@ class RolesUsersController < ApplicationController
     @roles_user = RolesUser.find(params[:id])
 
     respond_to do |format|
-      if @roles_user.update_attributes(params[:roles_user])
-        format.html { redirect_to(@roles_user, :notice => 'Roles user was successfully updated.') }
+      if @roles_user.update_attributes(params[:big_auth_roles_user])
+        format.html { redirect_to(roles_users_url(), :notice => 'Roles user was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

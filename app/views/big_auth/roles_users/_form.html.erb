@@ -1,0 +1,22 @@
+<%= form_for(roles_user) do |f| %>
+  <% if roles_user.errors.any? %>
+    <div id="error_explanation">
+      <%= pluralize(roles_user.errors.count, "error") %> prohibited this roles_user from being saved:
+
+      <ul>
+      <% roles_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :user_id %>
+  <span class="field">
+    <% BigAuth::Role.all.each do |role| %>
+      <%= f.radio_button :role_id, role.id %> <%= role.name %>
+    <% end %>
+  </span>
+  <span class="actions">
+    <%= f.submit "save" %>
+  </span>
+<% end %>

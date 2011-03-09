@@ -6,6 +6,10 @@ class CreateRoles < ActiveRecord::Migration
       t.timestamps
     end
     add_index :roles, :name
+
+    BigAuth::Role.create(:name => "pending")
+    BigAuth::Role.create(:name => "approved")
+    BigAuth::Role.create(:name => "admin")
   end
 
   def self.down

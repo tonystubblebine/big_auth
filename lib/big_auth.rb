@@ -4,6 +4,9 @@ module BigAuth
   # Twitter & Facebook app configs
   mattr_accessor :service_configs
   @@service_configs = {}
+
+  mattr_accessor :default_role
+  @@default_role = nil
   
   def self.setup
     yield self
