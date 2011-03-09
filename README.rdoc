@@ -2,12 +2,21 @@
 
 <em>Pre-alpha non-functional version.</em>
 
-Rails 3 engine for handling authentication and authorization. This is just a clone of omnisocial for now, check that out instead: http://github.com/icelab/omnisocial
+Rails 3 engine for handling authentication and authorization. Plan is to be devise + omniauth + cancan + UI
 
 == Installation
-1. blah blah blah
+1. gem 'big_auth'
+   gem 'cancan'
+
+2. Generate
+   rails g big_auth
+   rails g cancan:ability
 
 == Features for 0.1
 
 1. Auth: facebook, twitter, username/password
 2. Password reset
+
+== Acknowledgments 
+
+This started out as a clone of OmniSocial and that's basically how I learned to write engines. Now, obviously, it's doing more.

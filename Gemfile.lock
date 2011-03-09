@@ -1,7 +1,7 @@
 PATH
   remote: ../big_library
   specs:
-    big_library (0.0.2)
+    big_library (0.0.3)
 
 GEM
   remote: http://rubygems.org/
@@ -37,6 +37,7 @@ GEM
     arel (2.0.6)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
+    cancan (1.5.1)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faraday (0.4.6)
@@ -94,6 +95,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   big_library!
+  cancan
   oa-core
   oa-oauth
   rails (> 3.0.0)
