@@ -1,12 +1,16 @@
 module BigAuth
   class Account < ActiveRecord::Base
+    unloadable
     has_many :login_accounts, :class_name => 'BigAuth::LoginAccount', :dependent => :destroy
-    has_many :users, :dependent => :destroy
+    has_many :users, :class_name => "::User", :dependent => :destroy
     #delegate :login, :name, :picture_url, :to => :login_account
 
     def find_or_create_user(site=nil)
-      return self.users.first if site.nil? and !self.users.empty?
-      return user if site and user = self.users.find_by_site_id(site.id)
+      if site.nil? and !self.users.empty?
+        self.users.first
+      elsif (site and user = self.users.find_by_site_id(site.id))
+        return user
+      end
 
       user = ::User.create do |u|
         u.account = self
