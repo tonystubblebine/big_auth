@@ -99,3 +99,6 @@ DEPENDENCIES
   oa-core
   oa-oauth
   rails (> 3.0.0)
+
+METADATA
+  version: 1.0.6

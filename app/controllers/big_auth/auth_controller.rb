@@ -11,16 +11,16 @@ module BigAuth
     end
   
     def callback    
-      login_account = case request.env['rack.auth']['provider']
+      login_account = case request.env['omniauth.auth']['provider']
         when 'twitter' then
-          BigAuth::TwitterAccount.find_or_create_from_auth_hash(request.env['rack.auth'])
+          BigAuth::TwitterAccount.find_or_create_from_auth_hash(request.env['omniauth.auth'])
         when 'facebook' then
-          BigAuth::FacebookAccount.find_or_create_from_auth_hash(request.env['rack.auth'])
+          BigAuth::FacebookAccount.find_or_create_from_auth_hash(request.env['omniauth.auth'])
       end
     
       account = login_account.find_or_create_account
       self.current_user = account.find_or_create_user(defined?(current_site) ? current_site : nil)
-      
+
       flash[:message] = 'You have logged in successfully.'
       redirect_back_or_default(root_path)
     end
