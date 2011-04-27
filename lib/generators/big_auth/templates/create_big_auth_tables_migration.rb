@@ -2,7 +2,6 @@ class CreateBigAuthTables < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
       t.integer :account_id
-      t.integer :site_id # optional if you're using something like big_site
       # Any additional fields here
       
       t.timestamps
