@@ -7,7 +7,7 @@ module BigAuth
 
     def find_or_create_user(site=nil)
       if site.nil? and !self.users.empty?
-        self.users.first
+        return self.users.first
       elsif (site and user = self.users.find_by_site_id(site.id))
         return user
       end
