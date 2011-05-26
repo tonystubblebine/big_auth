@@ -12,11 +12,11 @@
   <% end %>
   <%= f.hidden_field :user_id %>
   <span class="field">
-    <% BigAuth::Role.all.each do |role| %>
-      <%= f.radio_button :role_id, role.id %> <%= role.name %>
-    <% end %>
+    	<% BigAuth::Role.all.each do |role| %>
+	      <%= f.radio_button :role_id, role.id %> <%= role.name %>
+	    <% end %>
   </span>
   <span class="actions">
-    <%= f.submit "save" %>
+    <%= f.submit "save", {:class => "button"} %>
   </span>
 <% end %>
