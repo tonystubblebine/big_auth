@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :roles, :through => :roles_users, :dependent => :destroy
   has_many :roles_users, :dependent => :destroy
 
-  delegate :login, :name, :picture_url, :to => :account
+  delegate :email, :login, :name, :picture_url, :to => :account
 
   def admin?
     has_role? :admin
