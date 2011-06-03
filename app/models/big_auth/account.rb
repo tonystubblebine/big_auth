@@ -50,15 +50,5 @@ module BigAuth
     def remember
       update_attributes(:remember_token => ::BCrypt::Password.create("#{Time.now}-#{self.login_accounts.map{|a| a.type.to_s}.join("-")}-#{self.login_accounts.map{|a|a.login.to_s}.join("-")}")) unless new_record?
     end
-
-    def to_param
-      if !self.login.include?('profile.php?')
-        "#{self.id}-#{self.login.gsub('.', '-')}"
-      else
-        self.id.to_s
-      end
-    end
-
-
   end
 end

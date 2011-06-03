@@ -5,19 +5,21 @@
 
 Gem::Specification.new do |s|
   s.name = %q{big_auth}
-  s.version = "0.0.7"
+  s.version = "0.0.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
-  s.date = %q{2011-05-26}
+  s.date = %q{2011-06-02}
   s.email = %q{tony+bigauth@tonystubblebine.com}
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
+    "app/controllers/big_auth/accounts_controller.rb",
     "app/controllers/big_auth/auth_controller.rb",
     "app/controllers/big_auth/roles_controller.rb",
     "app/controllers/big_auth/roles_users_controller.rb",
+    "app/helpers/accounts_helper.rb",
     "app/helpers/big_auth/auth_helper.rb",
     "app/helpers/roles_helper.rb",
     "app/helpers/roles_users_helper.rb",
@@ -28,6 +30,7 @@ Gem::Specification.new do |s|
     "app/models/big_auth/roles_user.rb",
     "app/models/big_auth/twitter_account.rb",
     "app/models/big_auth/user.rb",
+    "app/views/big_auth/accounts/edit.html.erb",
     "app/views/big_auth/auth/_links.html.erb",
     "app/views/big_auth/auth/new.html.erb",
     "app/views/big_auth/roles/_form.html.erb",
@@ -53,6 +56,7 @@ Gem::Specification.new do |s|
     "lib/generators/big_auth/big_auth_generator.rb",
     "lib/generators/big_auth/templates/README",
     "lib/generators/big_auth/templates/account_fixture.yml",
+    "lib/generators/big_auth/templates/add_email_to_accounts_migration.rb",
     "lib/generators/big_auth/templates/assets/images/facebook.png",
     "lib/generators/big_auth/templates/assets/images/signin_facebook.png",
     "lib/generators/big_auth/templates/assets/images/signin_twitter.png",
