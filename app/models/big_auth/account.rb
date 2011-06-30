@@ -28,11 +28,11 @@ module BigAuth
     end
     
     def from_facebook?
-      login_account.kind_of? FacebookAccount
+      login_accounts.last.kind_of? FacebookAccount
     end
  
     def from_twitter?
-      login_account.kind_of? TwitterAccount
+      login_accounts.last.kind_of? TwitterAccount
     end
  
     def login
