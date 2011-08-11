@@ -2,15 +2,13 @@
 
 <em>Pre-alpha non-functional version.</em>
 
-Rails 3 engine for handling authentication and authorization. Plan is to be devise + omniauth + cancan + UI
+Rails 3 engine for handling authentication and authorization. Plan is to be devise + omniauth + simple roles + UI
 
 == Installation
 1. gem 'big_auth'
-   gem 'cancan'
 
 2. Generate
    rails g big_auth
-   rails g cancan:ability
 
 == Features for 0.1
 

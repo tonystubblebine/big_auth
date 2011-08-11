@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
     has_role? :admin
   end
 
+  def add_role(role)
+    if r = Role.find_by_name(role.to_s)
+      self.roles << r
+    end
+  end
+
   def has_role?(role)
     self.roles.find_by_name(role.to_s) ? true : false
   end
