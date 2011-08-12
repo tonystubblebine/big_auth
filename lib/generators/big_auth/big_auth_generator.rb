@@ -23,7 +23,6 @@ module BigAuth
 
       def create_migration_files
         %w{create_roles create_roles_users create_big_auth_tables add_email_to_accounts}.each do |migration|
-puts "MIGRATION: " + migration
           create_migration_file(migration)
         end
       end

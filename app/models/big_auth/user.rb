@@ -20,8 +20,9 @@ class User < ActiveRecord::Base
     self.roles.find_by_name(role.to_s) ? true : false
   end
 
-  def foo
-    self.site
+  def switch_role(args)
+    self.roles.delete(Role.find_by_name(args[:from].to_s))
+    self.add_role(args[:to])
   end
 end
 end
