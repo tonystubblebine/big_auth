@@ -1,0 +1,2 @@
+module BigAuth::UsersHelper
+end

@@ -1,0 +1,27 @@
+<h1>All Users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Roles</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @users.each do |user| %>
+  <tr>
+    <td>
+      <%= user.login %>
+    </td>
+    <td>
+      <% @roles.each do |role| %>
+        <% form_for(user, :remote => true) do |f| %>
+          <%= check_box_tag "role", role.id, user.has_role?(role.name), :class => "bl-inline-checkbox" %> <%= role.name %>
+        <% end %>
+      <% end %>
+    </td>
+    <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+
+<br />

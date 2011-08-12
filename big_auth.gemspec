@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{big_auth}
-  s.version = "0.0.10"
+  s.version = "0.0.11"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
@@ -19,8 +19,10 @@ Gem::Specification.new do |s|
     "app/controllers/big_auth/auth_controller.rb",
     "app/controllers/big_auth/roles_controller.rb",
     "app/controllers/big_auth/roles_users_controller.rb",
+    "app/controllers/big_auth/users_controller.rb",
     "app/helpers/accounts_helper.rb",
     "app/helpers/big_auth/auth_helper.rb",
+    "app/helpers/big_auth/users_helper.rb",
     "app/helpers/roles_helper.rb",
     "app/helpers/roles_users_helper.rb",
     "app/models/big_auth/account.rb",
@@ -43,6 +45,12 @@ Gem::Specification.new do |s|
     "app/views/big_auth/roles_users/index.html.erb",
     "app/views/big_auth/roles_users/new.html.erb",
     "app/views/big_auth/roles_users/show.html.erb",
+    "app/views/big_auth/users/_form.html.erb",
+    "app/views/big_auth/users/edit.html.erb",
+    "app/views/big_auth/users/index.html.erb",
+    "app/views/big_auth/users/new.html.erb",
+    "app/views/big_auth/users/show.html.erb",
+    "app/views/layouts/admin.html.erb",
     "config/application.rb",
     "config/boot.rb",
     "config/environment.rb",
@@ -61,6 +69,8 @@ Gem::Specification.new do |s|
     "lib/generators/big_auth/templates/assets/images/signin_facebook.png",
     "lib/generators/big_auth/templates/assets/images/signin_twitter.png",
     "lib/generators/big_auth/templates/assets/images/twitter.gif",
+    "lib/generators/big_auth/templates/assets/javascripts/big_lib.js",
+    "lib/generators/big_auth/templates/assets/javascripts/rails.js",
     "lib/generators/big_auth/templates/assets/stylesheets/big_auth.css",
     "lib/generators/big_auth/templates/big_auth.rb",
     "lib/generators/big_auth/templates/create_big_auth_tables_migration.rb",

@@ -46,6 +46,10 @@ puts "MIGRATION: " + migration
         copy_file 'assets/images/signin_twitter.png',   'public/images/big_auth/signin_twitter.png'
         copy_file 'assets/images/signin_facebook.png',  'public/images/big_auth/signin_facebook.png'
       end
+
+      def copy_javascripts
+        copy_javascript
+      end
       
       def show_readme
         readme 'README' if behavior == :invoke

@@ -37,7 +37,6 @@ GEM
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
-    cancan (1.6.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faraday (0.6.1)
@@ -97,7 +96,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   big_library!
-  cancan
   oa-core
   oa-oauth
   rails (> 3.0.0)

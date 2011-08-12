@@ -1,5 +1,6 @@
 Rails::Application.routes.draw do
   namespace "big_auth" do
+    resources :users
     resources :roles
     resources :roles_users
     resources :accounts, :only => [:edit, :update]
