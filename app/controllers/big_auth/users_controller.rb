@@ -6,7 +6,7 @@ class BigAuth::UsersController < ApplicationController
   # GET /big_auth/users
   # GET /big_auth/users.xml
   def index
-    @users = BigAuth::User.all
+    @users = BigAuth::User.paginate(:page => params[:page], :per_page => 100)
     @roles = BigAuth::Role.all
 
     respond_to do |format|

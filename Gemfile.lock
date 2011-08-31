@@ -1,7 +1,7 @@
 PATH
   remote: ../big_library
   specs:
-    big_library (0.0.3)
+    big_library (0.0.4)
 
 GEM
   remote: http://rubygems.org/
@@ -89,6 +89,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.27)
+    will_paginate (3.0.0)
 
 PLATFORMS
   ruby
@@ -99,3 +100,4 @@ DEPENDENCIES
   oa-core
   oa-oauth
   rails (> 3.0.0)
+  will_paginate (= 3.0.0)
