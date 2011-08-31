@@ -62,7 +62,7 @@ class BigAuth::UsersController < ApplicationController
   # PUT /big_auth/users/1.xml
   def update
     @big_auth_user = BigAuth::User.find(params[:id])
-debugger
+
     respond_to do |format|
       if @big_auth_user.update_attributes(params[:big_auth_user])
         format.html { redirect_to(@big_auth_user, :notice => 'User was successfully updated.') }
