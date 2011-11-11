@@ -6,7 +6,7 @@ class BigAuth::UsersController < ApplicationController
   # GET /big_auth/users
   # GET /big_auth/users.xml
   def index
-    @users = BigAuth::User.all
+    @users = BigAuth::User.paginate(:page => params[:page], :per_page => 100)
     @roles = BigAuth::Role.all
 
     respond_to do |format|
@@ -62,7 +62,7 @@ class BigAuth::UsersController < ApplicationController
   # PUT /big_auth/users/1.xml
   def update
     @big_auth_user = BigAuth::User.find(params[:id])
-debugger
+
     respond_to do |format|
       if @big_auth_user.update_attributes(params[:big_auth_user])
         format.html { redirect_to(@big_auth_user, :notice => 'User was successfully updated.') }

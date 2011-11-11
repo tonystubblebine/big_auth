@@ -5,6 +5,7 @@ gem 'rails', '>3.0.0'
 gem 'oa-core',      :require => 'omniauth/core'
 gem 'oa-oauth',     :require => 'omniauth/oauth'
 gem 'bcrypt-ruby',  :require => 'bcrypt'
+gem 'will_paginate', '3.0.0'
 
 # Work around for using different paths to a gem based on environment. This work around requires that you set an environment variable in your .bash_profile
 # export RUBYOPT=rubygems
