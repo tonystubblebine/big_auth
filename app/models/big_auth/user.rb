@@ -24,5 +24,18 @@ class User < ActiveRecord::Base
     self.roles.delete(Role.find_by_name(args[:from].to_s))
     self.add_role(args[:to])
   end
+
+  protected
+  def self.create_with_twitter_login(args)
+   return nil if BigAuth::Account.find_by_email(args[:email]) or BigAuth::LoginAccount.find_by_login(args[:login])
+   account = BigAuth::Account.create(:email => args[:email])
+   login = BigAuth::LoginAccount.create(:type => "BigAuth::TwitterAccount", 
+                                        :account => args[:account], 
+                                        :remote_account_id => args[:remote_account_id], 
+                                        :name => args[:name], 
+                                        :login => args[:login], 
+                                        :picture_url => args[:picture_url])
+   self.create(:account => account)
+  end
 end
 end
