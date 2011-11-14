@@ -1,7 +1,7 @@
 module BigAuth
 class User < ActiveRecord::Base
   belongs_to :account
-  has_many :roles, :through => :roles_users, :dependent => :destroy
+  has_many :roles, :through => :roles_users
   has_many :roles_users, :dependent => :destroy
 
   delegate :email, :login, :name, :picture_url, :to => :account
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
    return nil if BigAuth::Account.find_by_email(args[:email]) or BigAuth::LoginAccount.find_by_login(args[:login])
    account = BigAuth::Account.create(:email => args[:email])
    login = BigAuth::LoginAccount.create(:type => "BigAuth::TwitterAccount", 
-                                        :account => args[:account], 
+                                        :account => account, 
                                         :remote_account_id => args[:remote_account_id], 
                                         :name => args[:name], 
                                         :login => args[:login], 
