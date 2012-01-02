@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{big_auth}
-  s.version = "0.0.14"
+  s.name = "big_auth"
+  s.version = "0.0.15"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
-  s.date = %q{2011-11-14}
-  s.email = %q{tony+bigauth@tonystubblebine.com}
+  s.date = "2012-01-02"
+  s.email = "tony+bigauth@tonystubblebine.com"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -80,8 +80,8 @@ Gem::Specification.new do |s|
     "lib/generators/big_auth/templates/user_fixture.yml"
   ]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{Rails engine for handling authentication.}
+  s.rubygems_version = "1.8.10"
+  s.summary = "Rails engine for handling authentication."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
@@ -92,14 +92,14 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<oa-oauth>, [">= 0"])
       s.add_runtime_dependency(%q<bcrypt-ruby>, [">= 0"])
       s.add_runtime_dependency(%q<will_paginate>, ["= 3.0.0"])
-      s.add_runtime_dependency(%q<big_library>, [">= 0"])
+      s.add_runtime_dependency(%q<big_library>, [">= 0.0.2"])
     else
       s.add_dependency(%q<rails>, ["> 3.0.0"])
       s.add_dependency(%q<oa-core>, [">= 0"])
       s.add_dependency(%q<oa-oauth>, [">= 0"])
       s.add_dependency(%q<bcrypt-ruby>, [">= 0"])
       s.add_dependency(%q<will_paginate>, ["= 3.0.0"])
-      s.add_dependency(%q<big_library>, [">= 0"])
+      s.add_dependency(%q<big_library>, [">= 0.0.2"])
     end
   else
     s.add_dependency(%q<rails>, ["> 3.0.0"])
@@ -107,7 +107,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<oa-oauth>, [">= 0"])
     s.add_dependency(%q<bcrypt-ruby>, [">= 0"])
     s.add_dependency(%q<will_paginate>, ["= 3.0.0"])
-    s.add_dependency(%q<big_library>, [">= 0"])
+    s.add_dependency(%q<big_library>, [">= 0.0.2"])
   end
 end
 
