@@ -44,7 +44,11 @@ module BigAuth
     end
 
     def picture_url
-      login_accounts.last.picture_url
+      if login_accounts.last.picture_url
+        login_accounts.last.picture_url 
+      elsif from_facebook?
+        "http://graph.facebook.com/#{login_accounts.last.remote_account_id}/picture?type=square"
+      end
     end
  
     def remember
