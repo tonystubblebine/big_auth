@@ -39,6 +39,10 @@ module BigAuth
       login_accounts.last.login
     end
 
+    def user
+      users.first
+    end
+
     def name
       login_accounts.last.name
     end
