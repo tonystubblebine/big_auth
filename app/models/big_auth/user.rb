@@ -25,6 +25,14 @@ class User < ActiveRecord::Base
     self.add_role(args[:to])
   end
 
+  def remote_login
+    if account.from_twitter?
+      "@#{account.login_accounts.first.login}"
+    else
+      account.login_accounts.first.login
+    end
+  end
+
   # @names means Twitter. Otherwise, assume Facebook.
   def self.find_by_remote_login(login)
     if login.starts_with?('@') and login_account = BigAuth::LoginAccount.find_by_login(login[1..-1])
