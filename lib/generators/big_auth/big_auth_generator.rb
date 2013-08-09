@@ -22,7 +22,7 @@ module BigAuth
       end
 
       def create_migration_files
-        %w{create_roles create_roles_users create_big_auth_tables add_email_to_accounts}.each do |migration|
+        %w{create_roles create_roles_users create_big_auth_tables add_email_to_accounts add_remote_token_to_login_accounts_migration}.each do |migration|
           create_migration_file(migration)
         end
       end

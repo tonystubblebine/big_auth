@@ -25,11 +25,19 @@ class User < ActiveRecord::Base
     self.add_role(args[:to])
   end
 
+  def login_account 
+    account.login_accounts.first
+  end
+
+  def remote_token
+    login_account.remote_token
+  end
+
   def remote_login
     if account.from_twitter?
-      "@#{account.login_accounts.first.login}"
+      "@#{login_account.login}"
     else
-      account.login_accounts.first.login
+      login_account.login
     end
   end
 

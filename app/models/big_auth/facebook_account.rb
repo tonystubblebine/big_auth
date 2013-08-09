@@ -4,6 +4,7 @@ module BigAuth
       self.remote_account_id  = auth_hash['uid']
       self.login              = auth_hash['user_info']['nickname']
       self.name               = auth_hash['user_info']['name']
+      self.remote_token       = auth_hash['credentials']['token']
     end
   
     def account_url
