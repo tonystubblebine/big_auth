@@ -9,6 +9,7 @@ gem 'omniauth-facebook'
 #gem 'oa-oauth',     :require => 'omniauth/oauth'
 gem 'bcrypt-ruby',  :require => 'bcrypt'
 gem 'will_paginate', '3.0.0'
+gem 'jeweler'
 
 # Work around for using different paths to a gem based on environment. This work around requires that you set an environment variable in your .bash_profile
 # export RUBYOPT=rubygems

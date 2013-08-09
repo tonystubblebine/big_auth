@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "big_auth"
-  s.version = "0.0.15"
+  s.version = "0.0.16"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Tony Stubblebine"]
-  s.date = "2012-01-02"
+  s.date = "2013-08-09"
   s.email = "tony+bigauth@tonystubblebine.com"
   s.extra_rdoc_files = [
     "README.rdoc"
@@ -65,6 +65,7 @@ Gem::Specification.new do |s|
     "lib/generators/big_auth/templates/README",
     "lib/generators/big_auth/templates/account_fixture.yml",
     "lib/generators/big_auth/templates/add_email_to_accounts_migration.rb",
+    "lib/generators/big_auth/templates/add_remote_token_to_login_accounts_migration.rb",
     "lib/generators/big_auth/templates/assets/images/facebook.png",
     "lib/generators/big_auth/templates/assets/images/signin_facebook.png",
     "lib/generators/big_auth/templates/assets/images/signin_twitter.png",
@@ -80,7 +81,7 @@ Gem::Specification.new do |s|
     "lib/generators/big_auth/templates/user_fixture.yml"
   ]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.23"
   s.summary = "Rails engine for handling authentication."
 
   if s.respond_to? :specification_version then
@@ -88,25 +89,28 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, ["> 3.0.0"])
-      s.add_runtime_dependency(%q<oa-core>, [">= 0"])
-      s.add_runtime_dependency(%q<oa-oauth>, [">= 0"])
+      s.add_runtime_dependency(%q<omniauth-twitter>, [">= 0"])
+      s.add_runtime_dependency(%q<omniauth-facebook>, [">= 0"])
       s.add_runtime_dependency(%q<bcrypt-ruby>, [">= 0"])
       s.add_runtime_dependency(%q<will_paginate>, ["= 3.0.0"])
+      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<big_library>, [">= 0.0.2"])
     else
       s.add_dependency(%q<rails>, ["> 3.0.0"])
-      s.add_dependency(%q<oa-core>, [">= 0"])
-      s.add_dependency(%q<oa-oauth>, [">= 0"])
+      s.add_dependency(%q<omniauth-twitter>, [">= 0"])
+      s.add_dependency(%q<omniauth-facebook>, [">= 0"])
       s.add_dependency(%q<bcrypt-ruby>, [">= 0"])
       s.add_dependency(%q<will_paginate>, ["= 3.0.0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<big_library>, [">= 0.0.2"])
     end
   else
     s.add_dependency(%q<rails>, ["> 3.0.0"])
-    s.add_dependency(%q<oa-core>, [">= 0"])
-    s.add_dependency(%q<oa-oauth>, [">= 0"])
+    s.add_dependency(%q<omniauth-twitter>, [">= 0"])
+    s.add_dependency(%q<omniauth-facebook>, [">= 0"])
     s.add_dependency(%q<bcrypt-ruby>, [">= 0"])
     s.add_dependency(%q<will_paginate>, ["= 3.0.0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<big_library>, [">= 0.0.2"])
   end
 end
