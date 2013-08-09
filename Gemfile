@@ -2,8 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails', '>3.0.0'
 
-gem 'oa-core',      :require => 'omniauth/core'
-gem 'oa-oauth',     :require => 'omniauth/oauth'
+#gem 'omniauth-twitter', "~> 1.0.0"
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+gem 'omniauth-facebook'
+#gem 'oa-core',      :require => 'omniauth/core'
+#gem 'oa-oauth',     :require => 'omniauth/oauth'
 gem 'bcrypt-ruby',  :require => 'bcrypt'
 gem 'will_paginate', '3.0.0'
 
