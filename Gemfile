@@ -1,14 +1,16 @@
 source 'http://rubygems.org'
 
-gem 'rails', '>3.0.0'
-
+gem 'rails', '>4.0.0'
+gem 'json', '1.8.3'
 #gem 'omniauth-twitter', "~> 1.0.0"
 gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
 gem 'omniauth-facebook'
-#gem 'oa-core',      :require => 'omniauth/core'
-#gem 'oa-oauth',     :require => 'omniauth/oauth'
-gem 'bcrypt-ruby',  :require => 'bcrypt'
-gem 'will_paginate', '3.0.0'
+
+gem 'oa-core',      :require => 'omniauth/core'
+gem 'oa-oauth',     :require => 'omniauth/oauth'
+
+gem 'bcrypt'
+gem 'will_paginate'
 gem 'jeweler'
 
 # Work around for using different paths to a gem based on environment. This work around requires that you set an environment variable in your .bash_profile

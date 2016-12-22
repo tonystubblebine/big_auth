@@ -11,6 +11,9 @@ Rails 3 engine for handling authentication and authorization. Plan is to be devi
    rails g big_auth
 
 3. Admin functions need both javascript files called from the header.
+  <% if controller.class.to_s.match(/^BigAuth:/) %>
+    <%= stylesheet_link_tag "big_auth" %>
+  <% end %>
 
 == Features for 0.1
 

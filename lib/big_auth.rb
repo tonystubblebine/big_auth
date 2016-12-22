@@ -20,7 +20,11 @@ module BigAuth
   def self.facebook(app_key, app_secret, options = {})
     @@service_configs[:facebook] = BigAuth::ServiceConfig.new(app_key, app_secret, options)
   end
-  
-  require 'big_auth/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
+ 
+  def self.hello_world
+    puts "HELLO WORLD"
+  end
+ 
+  require 'big_auth/engine' #if defined?(Rails) && Rails::VERSION::MAJOR == 4
 end
 
