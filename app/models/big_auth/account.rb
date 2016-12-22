@@ -18,7 +18,8 @@ module BigAuth
       end
 
       if BigAuth.default_role
-        user.roles_users.create(:role => Role.find_or_create_by_name(BigAuth.default_role))
+        role = Role.find_or_create_by(name: BigAuth.default_role)
+        user.roles_users.create(:role => role)
       end
       user
     end
